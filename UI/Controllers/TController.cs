@@ -8,13 +8,13 @@ namespace UI.Controllers
         /// 用于测试一些小功能
         /// </summary>
         /// <returns></returns>
-        public string Get()
+        public ActionResult Get()
         {
             var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-            var menu = Wx.Menu.MenuManager.Create( token );
+            var iplist = Wx.Menu.MenuManager.Create( token );
 
-            return token;
+            return Content( "" );
         }
     }
 }

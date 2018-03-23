@@ -4,7 +4,6 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 {
     /// <summary>
     /// 普通消息基类
-    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class MessageBase
     {
@@ -18,6 +17,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 图片消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class ImageMessage 
     {
@@ -33,6 +33,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 链接消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class LinkMessage
     {
@@ -49,6 +50,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 位置消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class LocationMessage
     {
@@ -67,6 +69,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 文本消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class TextMessage
     {
@@ -81,6 +84,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 短视频消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class ShortVideoMessage
     {
@@ -96,6 +100,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 视频消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class VideoMessage
     {
@@ -111,6 +116,7 @@ namespace Wx.MessageManagement.Normal.Models.Messages
 
     /// <summary>
     /// 音频消息
+    /// todo: xml解析不支持从父类继承的字段，因此，暂时不用继承
     /// </summary>
     public class VoiceMessage
     {
@@ -122,4 +128,6 @@ namespace Wx.MessageManagement.Normal.Models.Messages
         public string MediaId { get; set; }
         public string Format { get; set; }
     }
+
+
 }

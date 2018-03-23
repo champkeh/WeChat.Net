@@ -9,15 +9,15 @@
         /// <summary>
         /// 处理文本消息
         /// </summary>
-        /// <param name="msg"></param>
+        /// <param name="msgStr"></param>
         /// <returns></returns>
-        public string Handle( string msg )
+        public string Handle( string msgStr )
         {
-            var textMsg = Xml.Net.XmlConvert.DeserializeObject<Models.Messages.TextMessage>( msg );
+            var textMsg = Xml.Net.XmlConvert.DeserializeObject<Models.Messages.TextMessage>( msgStr );
 
 
             // 构造客服回复消息
-            Wx.MessageManagement.Service.Models.TextMessage reply = new Service.Models.TextMessage
+            var reply = new Service.Models.TextMessage
             {
                 touser = textMsg.FromUserName,
                 text = new Service.Models.TextContent

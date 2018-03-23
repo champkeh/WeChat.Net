@@ -58,6 +58,25 @@ namespace Wx.Menu
             {
                 button = new List<Button>
                 {
+                    new Button
+                    {
+                        name = "基本",
+                        sub_button = new List<Button>
+                        {
+                            new Button
+                            {
+                                name = "今日热搜",
+                                type = "click",
+                                key = "secret_key",
+                            },
+                            new Button
+                            {
+                                name = "搜索",
+                                type = "view",
+                                url = "http://www.baidu.com/",
+                            },
+                        },
+                    },
                     new Button()
                     {
                         name = "发图",
@@ -101,12 +120,6 @@ namespace Wx.Menu
                                 key = "rselfmenu_0_1",
                             },
                         },
-                    },
-                    new Button
-                    {
-                        name = "发送位置",
-                        type = "location_select",
-                        key = "rselfmenu_2_0",
                     },
                 },
             };

@@ -6,6 +6,10 @@ namespace Wx.Utils
 {
     public class AccessTokenUtil
     {
+        /// <summary>
+        /// 获取接口调用凭据
+        /// </summary>
+        /// <returns></returns>
         public static string GetAccessToken()
         {
             string url = "https://api.weixin.qq.com/cgi-bin/token";

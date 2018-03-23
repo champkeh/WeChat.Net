@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Wx.MessageManagement.Normal.MsgHandlers
+﻿namespace Wx.MessageManagement.Normal.MsgHandlers
 {
     /// <summary>
     /// 图片消息处理器
@@ -11,20 +9,20 @@ namespace Wx.MessageManagement.Normal.MsgHandlers
         /// <summary>
         /// 处理图片消息
         /// </summary>
-        /// <param name="msg"></param>
+        /// <param name="msgStr"></param>
         /// <returns></returns>
-        public string Handle( string msg )
+        public string Handle( string msgStr )
         {
-            var imgMsg = Xml.Net.XmlConvert.DeserializeObject<Models.Messages.ImageMessage>( msg );
+            var imgMsg = Xml.Net.XmlConvert.DeserializeObject<Models.Messages.ImageMessage>( msgStr );
 
 
             // 构造客服回复消息
-            Wx.MessageManagement.Service.Models.ImageMessage reply = new Service.Models.ImageMessage
+            var reply = new Service.Models.TextMessage
             {
                 touser = imgMsg.FromUserName,
-                image = new Service.Models.MediaContent
+                text = new Service.Models.TextContent
                 {
-                    media_id = imgMsg.MediaId,
+                    content = "收到了你的图片消息: " + imgMsg.PicUrl,
                 },
             };
 

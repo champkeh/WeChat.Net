@@ -45,12 +45,20 @@
   <ItemGroup>
     <Compile Include="Menu\MenuManager.cs" />
     <Compile Include="Menu\Models\Menu.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\ClickEventHandler.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\LocationEventHandler.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\ScanWithSubscribeEventHandler.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\SubscribeEventHandler.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\UnsubscribeEventHandler.cs" />
+    <Compile Include="MessageManagement\Normal\EventHandlers\ViewEventHandler.cs" />
     <Compile Include="MessageManagement\Service\ServiceMessageModels.cs" />
     <Compile Include="MessageManagement\Service\ServiceUtil.cs" />
     <Compile Include="Utils\AccessTokenUtil.cs" />
+    <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\Crypto\Cryptography.cs" />
     <Compile Include="Utils\Crypto\WXBizMsgCrypt.cs" />
     <Compile Include="Utils\Model\AccessTokenModel.cs" />
+    <Compile Include="Utils\Model\IPListModel.cs" />
     <Compile Include="Utils\TokenVerifyUtil.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="MessageManagement\MessageParser.cs" />
