@@ -94,4 +94,8 @@ X-Original-Host: 44a936a3.ngrok.io
 ---
 
 
+## todo
+
+1. 消息重试时的排重处理（加一个消息队列，用msgid来标识消息唯一性）
+2. 写测试
 

@@ -17,6 +17,7 @@ namespace UI.Controllers
     ///   3. 安全模式的消息处理
     ///       POST /wx/access?signature=&timestamp=&nonce=&openid=&encrypt_type=aes&msg_signature=
     /// </summary>
+    [RoutePrefix("wx")]
     public class WxController : Controller
     {
 
@@ -27,12 +28,11 @@ namespace UI.Controllers
         /// <param name="timestamp">时间戳</param>
         /// <param name="nonce">随机字符串</param>
         /// <param name="echostr">验证成功后，原样返回该值</param>
-        /// <param name="x">此参数只为hack</param>
         /// <returns></returns>
         [HttpGet]
         [Route( "access" )]
         [RequiresParameter( "echostr" )]
-        public string Access( string signature, string echostr, string timestamp, string nonce, string x )
+        public string AccessGet( string signature, string echostr, string timestamp, string nonce )
         {
             // 验证Token
             if ( Wx.Utils.TokenVerifyUtil.VerifySign( signature, timestamp, nonce ) )
@@ -61,7 +61,7 @@ namespace UI.Controllers
         [RequiresParameter( "openid" )]
         [NoParameter( "encrypt_type" )]
         [NoParameter( "msg_signature" )]
-        public ActionResult Access( string signature, string timestamp, string nonce, string openid )
+        public ActionResult AccessPost( string signature, string timestamp, string nonce, string openid )
         {
             // 验证Token
             if ( !Wx.Utils.TokenVerifyUtil.VerifySign( signature, timestamp, nonce ) )
@@ -90,17 +90,24 @@ namespace UI.Controllers
                  catch ( System.NotSupportedException ex )
                  {
                      Log.Logger.Log( "[wx: 处理消息 异常] " + ex.Message );
+                     return;
                  }
                  catch ( System.Exception ex )
                  {
                      Log.Logger.Log( "[wx: 处理消息 异常] " + ex.Message );
+                     return;
                  }
 
                  // 获取token
                  var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
                  // 调用客服消息接口进行异步回复
-                 Wx.MessageManagement.Service.ServiceUtil.Send( token, reply );
+                 var ret = Wx.MessageManagement.Service.ServiceUtil.Send( token, reply );
+                 if ( ret == false )
+                 {
+                     Log.Logger.Log( "[wx: 客服消息发送失败]" );
+                     return;
+                 }
              } );
 
 
@@ -125,7 +132,7 @@ namespace UI.Controllers
         [RequiresParameter( "openid" )]
         [RequiresParameter( "encrypt_type" )]
         [RequiresParameter( "msg_signature" )]
-        public ActionResult Access( string signature, string timestamp, string nonce, string openid, string encrypt_type, string msg_signature )
+        public ActionResult AccessPost( string signature, string timestamp, string nonce, string openid, string encrypt_type, string msg_signature )
         {
             // 验证Token
             if ( !Wx.Utils.TokenVerifyUtil.VerifySign( signature, timestamp, nonce ) )
@@ -151,7 +158,7 @@ namespace UI.Controllers
                 return Content( "" );
             }
 
-            
+
 
             // 异步处理消息。如果需要回复，则采用客服接口异步回复
             Task.Run( () =>
@@ -169,26 +176,24 @@ namespace UI.Controllers
                 catch ( System.NotSupportedException ex )
                 {
                     Log.Logger.Log( "[wx: 处理消息 异常] " + ex.Message );
+                    return;
                 }
                 catch ( System.Exception ex )
                 {
                     Log.Logger.Log( "[wx: 处理消息 异常] " + ex.Message );
+                    return;
                 }
 
                 // 获取token
                 var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-                // 加密消息体
-                string replyMsgCrypt = "";
-                var enCode = wxcpt.EncryptMsg( reply, timestamp, nonce, ref replyMsgCrypt );
-                if( enCode == 0 )
+                // 调用客服消息接口进行异步回复
+                // 此处不需要对消息进行加密
+                var ret = Wx.MessageManagement.Service.ServiceUtil.Send( token, reply );
+                if ( ret == false )
                 {
-                    // 调用客服消息接口进行异步回复
-                    Wx.MessageManagement.Service.ServiceUtil.Send( token, reply );
-                }
-                else
-                {
-                    Log.Logger.Log( "" );
+                    Log.Logger.Log( "[wx: 客服消息发送失败]" );
+                    return;
                 }
             } );
 
