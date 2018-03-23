@@ -30,7 +30,9 @@ ngrok http [port] -host-header="localhost:[port]"
 
 ## 微信传参说明
 
-1. 提交配置，验证token时：
+1. 提交/更新服务器配置时，验证token<br/>
+每次修改公众号后台的服务器配置时，微信都会发送一个GET请求去验证Token。请求格式如下:
+
 ```http
 GET /wx/access?signature=346deb1512deeea142c30245d7312874ab636869&echostr=11328701160039546815&timestamp=1521777845&nonce=3514821174 HTTP/1.1
 Host: localhost:64961
@@ -44,7 +46,9 @@ X-Original-Host: 44a936a3.ngrok.io
 
 ```
 
-2. 普通用户发送消息给公众号时(明文模式)：
+2. 普通用户发送消息给公众号时(明文模式)：<br/>
+当普通用户给微信发送消息时，微信会转发这条消息到我们的服务器，格式如下：
+
 ```http
 POST /wx/access?signature=b4ec6687c3a35e78e60549bec4163b9ecea345c7&timestamp=1521777871&nonce=1494721558&openid=oGO4t07Fz_DGdbkIs1snsuHFKRRE HTTP/1.1
 Host: localhost:64961
@@ -66,7 +70,9 @@ X-Original-Host: 44a936a3.ngrok.io
 </xml>
 ```
 
-3. 普通用户发送消息给公众号时(安全模式)：
+3. 普通用户发送消息给公众号时(安全模式)：<br/>
+当普通用户给微信发送消息时，微信会转发这条消息到我们的服务器，格式如下：
+
 ```http
 POST /wx/access?signature=c344576d342a966adb8e193f525b059d33963a04&timestamp=1521778198&nonce=862720700&openid=oGO4t07Fz_DGdbkIs1snsuHFKRRE&encrypt_type=aes&msg_signature=08c7e159f19509d6de8b547a0a1f226bfa23142f HTTP/1.1
 Host: localhost:64961
