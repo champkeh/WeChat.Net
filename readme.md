@@ -3,13 +3,32 @@
 本项目是采用asp.net(mvc)开发微信公众号的基本框架，可以在此基础上编写业务逻辑
 
 
-## 接入开发者模式
+## 准备工作
+推荐使用[ngrok](https://ngrok.com/)内网穿透工具进行开发。效果如下：<br/>
+
+![ngrok-preview](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/ngrok_preview1.png)
+
+> 注意：如果使用vs搭配ngrok进行调试时，需要用下面这样的姿势打开ngrok
+```
+ngrok http [port] -host-header="localhost:[port]"
+```
+![ngrok-preview](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/ngrok_config.png)
+
+
+---
+
+
+## 配置公众号
 - 在微信公众号后台，开启开发者模式，并配置本地ip白名单方便调试
 - 消息加解密方式可选择`明文模式`和`安全模式`，程序会自动根据传参来决定使用哪种模式进行响应
 
 ![wx-config](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/wx_config.png)
 
-#### 微信传参详情
+
+---
+
+
+## 微信传参说明
 
 1. 提交配置，验证token时：
 ```http
@@ -68,11 +87,5 @@ X-Original-Host: 44a936a3.ngrok.io
 
 ---
 
-推荐使用[ngrok](https://ngrok.com/)工具进行开发<br/>
-![ngrok-preview](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/ngrok_preview1.png)
 
-> 注意：如果使用vs搭配ngrok进行调试时，需要用下面这样的姿势打开ngrok
-```
-ngrok http [port] -host-header="localhost:[port]"
-```
 
