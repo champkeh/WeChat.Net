@@ -7,7 +7,7 @@
 - 在微信公众号后台，开启开发者模式，并配置本地ip白名单方便调试
 - 消息加解密方式可选择`明文模式`和`安全模式`，程序会自动根据传参来决定使用哪种模式进行响应
 
-![d](https://ngrok.com/)
+![wx-config](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/wx_config.png)
 
 #### 微信传参详情
 
@@ -69,7 +69,7 @@ X-Original-Host: 44a936a3.ngrok.io
 ---
 
 推荐使用[ngrok](https://ngrok.com/)工具进行开发<br/>
-![d](https://ngrok.com/)
+![ngrok-preview](https://raw.githubusercontent.com/champkeh/WeChat.Net/master/UI/Content/images/ngrok_preview1.png)
 
 > 注意：如果使用vs搭配ngrok进行调试时，需要用下面这样的姿势打开ngrok
 ```
