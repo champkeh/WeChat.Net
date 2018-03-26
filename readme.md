@@ -1,4 +1,4 @@
-# wechat.net [![Build Status](https://travis-ci.org/champkeh/WeChat.Net.svg?branch=master)](https://travis-ci.org/champkeh/WeChat.Net)
+# wechat.net 
 
 本项目是采用asp.net(mvc)开发微信公众号的基本框架，可以在此基础上编写业务逻辑
 
