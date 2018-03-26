@@ -104,6 +104,7 @@ namespace Wx.MessageManagement
                     handler = new ViewEventHandler( );
                     break;
                 default:
+                    // todo: 实现更多事件处理，比如自定义菜单的事件
                     throw new System.NotSupportedException( "不支持的事件类型: " + eventBase.Event );
             }
 

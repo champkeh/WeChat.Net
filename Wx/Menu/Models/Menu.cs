@@ -2,6 +2,9 @@
 
 namespace Wx.Menu.Models
 {
+    /// <summary>
+    /// 公众号自定义菜单模型
+    /// </summary>
     public class MenuModel : WxError
     {
         public Menu menu { get; set; }

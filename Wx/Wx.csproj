@@ -32,8 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
@@ -53,6 +51,11 @@
     <Compile Include="MessageManagement\Normal\EventHandlers\ViewEventHandler.cs" />
     <Compile Include="MessageManagement\Service\ServiceMessageModels.cs" />
     <Compile Include="MessageManagement\Service\ServiceUtil.cs" />
+    <Compile Include="MessageManagement\Template\Industry\IndustryManager.cs" />
+    <Compile Include="MessageManagement\Template\Industry\IndustryModel.cs" />
+    <Compile Include="MessageManagement\Template\Models\TemplateListResult.cs" />
+    <Compile Include="MessageManagement\Template\Models\TemplateMsgResult.cs" />
+    <Compile Include="MessageManagement\Template\TemplateManager.cs" />
     <Compile Include="Utils\AccessTokenUtil.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\Crypto\Cryptography.cs" />
@@ -83,6 +86,10 @@
       <Project>{0c04219a-088a-4a0a-a1ee-9d29a4ad52b3}</Project>
       <Name>AppUtils</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{8b256693-2720-4a20-9d96-a259cf6a4eec}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extensions\Extensions.csproj">
       <Project>{2e31ea97-1f52-4a7d-8d66-f27a99a68fd5}</Project>
       <Name>Extensions</Name>
@@ -92,5 +99,6 @@
       <Name>Log</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

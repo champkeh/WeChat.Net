@@ -12,7 +12,7 @@ namespace UI.Controllers
         {
             var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-            var iplist = Wx.Menu.MenuManager.Create( token );
+            Wx.MessageManagement.Template.TemplateManager.UpdateToDb( token );
 
             return Content( "" );
         }

@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace AppUtils
 {
-    public sealed class ConfigHelper
+    public sealed class ConfigUtil
     {
         /// <summary>
         /// 得到AppSettings中的配置字符串信息
@@ -14,18 +14,20 @@ namespace AppUtils
         {
             try
             {
-                var objModel = ConfigurationManager.AppSettings[key];
-                if ( objModel != null )
+                var appValue = ConfigurationManager.AppSettings[key];
+                if ( appValue != null )
                 {
-                    return objModel.ToString( );
+                    return appValue.ToString( );
                 }
                 else
                 {
                     return null;
                 }
             }
-            catch
-            { }
+            catch ( Exception ex )
+            {
+                Log.Logger.Log( "[log: 警告] 获取config配置异常: " + ex.InnerException + "|" + ex.Message );
+            }
             return null;
         }
 
@@ -53,6 +55,9 @@ namespace AppUtils
             }
             return result;
         }
+
+
+
         /// <summary>
         /// 得到AppSettings中的配置Decimal信息
         /// </summary>
@@ -76,6 +81,9 @@ namespace AppUtils
 
             return result;
         }
+
+
+
         /// <summary>
         /// 得到AppSettings中的配置int信息
         /// </summary>

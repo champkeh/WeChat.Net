@@ -39,13 +39,13 @@
 
         static Config()
         {
-            AppID = AppUtils.ConfigHelper.GetConfigString( "AppId" );
-            AppSecret = AppUtils.ConfigHelper.GetConfigString( "AppSecret" );
-            MchID = AppUtils.ConfigHelper.GetConfigString( "MchId" );
-            ApiKey = AppUtils.ConfigHelper.GetConfigString( "ApiKey" );
-            CertPath = AppUtils.ConfigHelper.GetConfigString( "ApiCert" );
-            Token = AppUtils.ConfigHelper.GetConfigString( "Token" );
-            EncodingAESKey = AppUtils.ConfigHelper.GetConfigString( "EncodingAESKey" );
+            AppID = AppUtils.ConfigUtil.GetConfigString( "AppId" );
+            AppSecret = AppUtils.ConfigUtil.GetConfigString( "AppSecret" );
+            MchID = AppUtils.ConfigUtil.GetConfigString( "MchId" );
+            ApiKey = AppUtils.ConfigUtil.GetConfigString( "ApiKey" );
+            CertPath = AppUtils.ConfigUtil.GetConfigString( "ApiCert" );
+            Token = AppUtils.ConfigUtil.GetConfigString( "Token" );
+            EncodingAESKey = AppUtils.ConfigUtil.GetConfigString( "EncodingAESKey" );
         }
     }
 
