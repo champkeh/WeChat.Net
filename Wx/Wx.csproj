@@ -68,7 +68,9 @@
     <Compile Include="Utils\Crypto\Cryptography.cs" />
     <Compile Include="Utils\Crypto\WXBizMsgCrypt.cs" />
     <Compile Include="Utils\Model\AccessTokenModel.cs" />
+    <Compile Include="Utils\Model\GetTicketResultModel.cs" />
     <Compile Include="Utils\Model\IPListModel.cs" />
+    <Compile Include="Utils\Model\ShortURLResultModel.cs" />
     <Compile Include="Utils\TokenVerifyUtil.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="MessageManagement\MessageParser.cs" />

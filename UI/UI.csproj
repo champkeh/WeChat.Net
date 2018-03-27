@@ -132,6 +132,7 @@
     <Compile Include="Attributes\RequiresParameterAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TController.cs" />
+    <Compile Include="Controllers\WxAuthorizeController.cs" />
     <Compile Include="Controllers\WxController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\WxAuthorize\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

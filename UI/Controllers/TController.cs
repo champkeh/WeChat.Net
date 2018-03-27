@@ -10,14 +10,10 @@ namespace UI.Controllers
         /// <returns></returns>
         public ActionResult Get()
         {
-            //var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
+            var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-
-            //var black_list = Wx.User.UserManager.GetBlackList( token, null );
-
-
-            //var ret = Wx.User.UserManager.BatchUnblockList( token, black_list.data.openid );
-
+            var ret = Wx.Utils.CommonUtil.GetQRCodeTicket( token, "100/2" );
+            
             return Content( "" );
         }
 
