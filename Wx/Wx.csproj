@@ -58,7 +58,7 @@
     <Compile Include="MessageManagement\Template\TemplateManager.cs" />
     <Compile Include="User\Models\BatchSubscribeUserInfoModel.cs" />
     <Compile Include="User\Models\SubscribeUserInfoModel.cs" />
-    <Compile Include="User\Models\SubscribeUserListModel.cs" />
+    <Compile Include="User\Models\UserListModel.cs" />
     <Compile Include="User\Tag\Models\CreateTagResult.cs" />
     <Compile Include="User\Tag\Models\GetTagResult.cs" />
     <Compile Include="User\Tag\TagManager.cs" />

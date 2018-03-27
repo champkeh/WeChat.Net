@@ -14,7 +14,7 @@ namespace Wx.User
         /// <param name="token"></param>
         /// <param name="next_openid"></param>
         /// <returns></returns>
-        public static SubscribeUserListModel SubscribeList( string token, string next_openid )
+        public static UserListModel SubscribeList( string token, string next_openid )
         {
             string url = "https://api.weixin.qq.com/cgi-bin/user/get";
             url += "?access_token=" + token;
@@ -27,7 +27,7 @@ namespace Wx.User
 
             try
             {
-                SubscribeUserListModel wx_userlist = JsonUtil.FromJson<SubscribeUserListModel>( res );
+                UserListModel wx_userlist = JsonUtil.FromJson<UserListModel>( res );
                 if ( wx_userlist != null && wx_userlist.errcode == 0 )
                 {
                     return wx_userlist;
@@ -130,6 +130,136 @@ namespace Wx.User
                 return null;
             }
 
+        }
+
+
+
+
+        /// <summary>
+        /// 获取黑名单列表
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="begin_openid"></param>
+        /// <returns></returns>
+        public static UserListModel GetBlackList( string token, string begin_openid )
+        {
+            string url = "https://api.weixin.qq.com/cgi-bin/tags/members/getblacklist";
+            url += "?access_token=" + token;
+
+            var postdata = new
+            {
+                begin_openid = begin_openid
+            };
+
+            var res = new AppUtils.HttpUtil( ).PostJson( url, AppUtils.JsonUtil.ToJson( postdata ) );
+
+            Log.Logger.Log( "[wx: GetBlackList] " + url + "#" + res );
+
+            try
+            {
+                UserListModel wx_balcklist = JsonUtil.FromJson<UserListModel>( res );
+                if ( wx_balcklist != null && wx_balcklist.errcode == 0 )
+                {
+                    return wx_balcklist;
+                }
+                else
+                {
+                    Log.Logger.Log( "[wx: GetBlackList Failed] " + url + "#" + res );
+                    return null;
+                }
+            }
+            catch ( Exception ex )
+            {
+                Log.Logger.Log( "[wx: GetBlackList Exception] " + url + "#" + ex.Message );
+                return null;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 添加黑名单
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="openids"></param>
+        public static bool BatchBlackList( string token, List<string> openids )
+        {
+            string url = "https://api.weixin.qq.com/cgi-bin/tags/members/batchblacklist";
+            url += "?access_token=" + token;
+
+            var list = new
+            {
+                openid_list = openids,
+            };
+
+            var json = AppUtils.JsonUtil.ToJson( list );
+
+            var res = new AppUtils.HttpUtil( ).PostJson( url, json );
+
+            Log.Logger.Log( "[wx: BatchBlackList] " + url + "#" + res );
+
+            try
+            {
+                WxError wx_status = JsonUtil.FromJson<WxError>( res );
+                if ( wx_status != null && wx_status.errcode == 0 )
+                {
+                    return true;
+                }
+                else
+                {
+                    Log.Logger.Log( "[wx: BatchBlackList Failed] " + url + "#" + res );
+                    return false;
+                }
+            }
+            catch ( Exception ex )
+            {
+                Log.Logger.Log( "[wx: BatchBlackList Exception] " + url + "#" + ex.Message );
+                return false;
+            }
+        }
+
+
+
+        /// <summary>
+        /// 取消黑名单
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="openids"></param>
+        /// <returns></returns>
+        public static bool BatchUnblockList(string token, List<string> openids )
+        {
+            string url = "https://api.weixin.qq.com/cgi-bin/tags/members/batchunblacklist";
+            url += "?access_token=" + token;
+
+            var list = new
+            {
+                openid_list = openids,
+            };
+
+            var json = AppUtils.JsonUtil.ToJson( list );
+
+            var res = new AppUtils.HttpUtil( ).PostJson( url, json );
+
+            Log.Logger.Log( "[wx: BatchUnblockList] " + url + "#" + res );
+
+            try
+            {
+                WxError wx_status = JsonUtil.FromJson<WxError>( res );
+                if ( wx_status != null && wx_status.errcode == 0 )
+                {
+                    return true;
+                }
+                else
+                {
+                    Log.Logger.Log( "[wx: BatchUnblockList Failed] " + url + "#" + res );
+                    return false;
+                }
+            }
+            catch ( Exception ex )
+            {
+                Log.Logger.Log( "[wx: BatchUnblockList Exception] " + url + "#" + ex.Message );
+                return false;
+            }
         }
 
 

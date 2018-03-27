@@ -10,17 +10,18 @@ namespace UI.Controllers
         /// <returns></returns>
         public ActionResult Get()
         {
-            var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
+            //var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-            var user_list = Wx.User.UserManager.SubscribeList( token, null );
 
-            var user_info = Wx.User.UserManager.BatchGetUserInfo( token, user_list.data.openid );
+            //var black_list = Wx.User.UserManager.GetBlackList( token, null );
 
+
+            //var ret = Wx.User.UserManager.BatchUnblockList( token, black_list.data.openid );
 
             return Content( "" );
         }
 
 
-       
+
     }
 }
