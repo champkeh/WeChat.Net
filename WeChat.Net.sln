@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIZService", "BIZService\BIZService.csproj", "{73D405A8-A2C5-404F-98B8-A0789FDBADB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cache", "Cache\Cache.csproj", "{D9501A81-F46D-4165-98C0-9042E4841559}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{73D405A8-A2C5-404F-98B8-A0789FDBADB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73D405A8-A2C5-404F-98B8-A0789FDBADB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73D405A8-A2C5-404F-98B8-A0789FDBADB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9501A81-F46D-4165-98C0-9042E4841559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9501A81-F46D-4165-98C0-9042E4841559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9501A81-F46D-4165-98C0-9042E4841559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9501A81-F46D-4165-98C0-9042E4841559}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

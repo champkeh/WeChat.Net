@@ -37,6 +37,13 @@
         /// </summary>
         public static string EncodingAESKey { get; set; }
 
+
+        /// <summary>
+        /// 授权回调域名
+        /// </summary>
+        public static string Domain { get; set; }
+
+
         static Config()
         {
             AppID = AppUtils.ConfigUtil.GetConfigString( "AppId" );
@@ -46,6 +53,8 @@
             CertPath = AppUtils.ConfigUtil.GetConfigString( "ApiCert" );
             Token = AppUtils.ConfigUtil.GetConfigString( "Token" );
             EncodingAESKey = AppUtils.ConfigUtil.GetConfigString( "EncodingAESKey" );
+
+            Domain = AppUtils.ConfigUtil.GetConfigString( "domain" );
         }
     }
 

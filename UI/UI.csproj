@@ -177,6 +177,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\T\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,6 +204,10 @@
     <ProjectReference Include="..\BIZService\BIZService.csproj">
       <Project>{73d405a8-a2c5-404f-98b8-a0789fdbadb1}</Project>
       <Name>BIZService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cache\Cache.csproj">
+      <Project>{d9501a81-f46d-4165-98c0-9042e4841559}</Project>
+      <Name>Cache</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{8B256693-2720-4A20-9D96-A259CF6A4EEC}</Project>

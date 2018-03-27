@@ -35,12 +35,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Xml.Net, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xml.Net.1.0.6\lib\net451\Xml.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorize\Models\AccessTokenResultModel.cs" />
+    <Compile Include="Authorize\Models\UserInfoResultModel.cs" />
+    <Compile Include="Authorize\WebAuthorizeUtil.cs" />
     <Compile Include="Menu\MenuManager.cs" />
     <Compile Include="Menu\Models\Menu.cs" />
     <Compile Include="MessageManagement\Normal\EventHandlers\ClickEventHandler.cs" />

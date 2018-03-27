@@ -226,7 +226,7 @@ namespace Wx.User
         /// <param name="token"></param>
         /// <param name="openids"></param>
         /// <returns></returns>
-        public static bool BatchUnblockList(string token, List<string> openids )
+        public static bool BatchUnblockList( string token, List<string> openids )
         {
             string url = "https://api.weixin.qq.com/cgi-bin/tags/members/batchunblacklist";
             url += "?access_token=" + token;
@@ -260,6 +260,21 @@ namespace Wx.User
                 Log.Logger.Log( "[wx: BatchUnblockList Exception] " + url + "#" + ex.Message );
                 return false;
             }
+        }
+
+
+
+        /// <summary>
+        /// 用户是否关注公众号
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="openid"></param>
+        /// <returns></returns>
+        public static bool UserIsSubscribe( string token, string openid )
+        {
+            var user = SubscribeUserInfo( token, openid );
+
+            return user.subscribe;
         }
 
 
