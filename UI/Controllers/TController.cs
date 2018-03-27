@@ -12,9 +12,15 @@ namespace UI.Controllers
         {
             var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
-            Wx.MessageManagement.Template.TemplateManager.UpdateToDb( token );
+            var user_list = Wx.User.UserManager.SubscribeList( token, null );
+
+            var user_info = Wx.User.UserManager.BatchGetUserInfo( token, user_list.data.openid );
+
 
             return Content( "" );
         }
+
+
+       
     }
 }

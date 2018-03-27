@@ -56,6 +56,13 @@
     <Compile Include="MessageManagement\Template\Models\TemplateListResult.cs" />
     <Compile Include="MessageManagement\Template\Models\TemplateMsgResult.cs" />
     <Compile Include="MessageManagement\Template\TemplateManager.cs" />
+    <Compile Include="User\Models\BatchSubscribeUserInfoModel.cs" />
+    <Compile Include="User\Models\SubscribeUserInfoModel.cs" />
+    <Compile Include="User\Models\SubscribeUserListModel.cs" />
+    <Compile Include="User\Tag\Models\CreateTagResult.cs" />
+    <Compile Include="User\Tag\Models\GetTagResult.cs" />
+    <Compile Include="User\Tag\TagManager.cs" />
+    <Compile Include="User\UserManager.cs" />
     <Compile Include="Utils\AccessTokenUtil.cs" />
     <Compile Include="Utils\CommonUtil.cs" />
     <Compile Include="Utils\Crypto\Cryptography.cs" />
