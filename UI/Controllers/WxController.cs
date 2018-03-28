@@ -129,7 +129,7 @@ namespace UI.Controllers
                 if ( deCode != 0 )
                 {
                     Log.Logger.Log( "[wx: 消息解密失败] 错误码: " + deCode );
-                    return "";
+                    return "消息解密失败";
                 }
             }
             else
@@ -148,7 +148,7 @@ namespace UI.Controllers
                 try
                 {
                     // 解析并执行
-                    reply = Wx.MessageManagement.MessageParser.ParseAndExecute( rawMsgStr );
+                    reply = Wx.Message.MessageParser.ParseAndExecute( rawMsgStr );
                 }
                 catch ( System.NotSupportedException ex )
                 {
@@ -167,7 +167,7 @@ namespace UI.Controllers
                     var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
 
                     // 调用客服消息接口进行异步回复
-                    var ret = Wx.MessageManagement.Service.ServiceUtil.Send( token, reply );
+                    var ret = Wx.Message.Service.ServiceUtil.Send( token, reply );
                     if ( ret == false )
                     {
                         Log.Logger.Log( "[wx: 客服消息发送失败]" );

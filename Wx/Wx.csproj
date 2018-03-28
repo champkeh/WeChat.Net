@@ -47,19 +47,19 @@
     <Compile Include="Authorize\WebAuthorizeUtil.cs" />
     <Compile Include="Menu\MenuManager.cs" />
     <Compile Include="Menu\Models\Menu.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\ClickEventHandler.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\LocationEventHandler.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\ScanWithSubscribeEventHandler.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\SubscribeEventHandler.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\UnsubscribeEventHandler.cs" />
-    <Compile Include="MessageManagement\Normal\EventHandlers\ViewEventHandler.cs" />
-    <Compile Include="MessageManagement\Service\ServiceMessageModels.cs" />
-    <Compile Include="MessageManagement\Service\ServiceUtil.cs" />
-    <Compile Include="MessageManagement\Template\Industry\IndustryManager.cs" />
-    <Compile Include="MessageManagement\Template\Industry\IndustryModel.cs" />
-    <Compile Include="MessageManagement\Template\Models\TemplateListResult.cs" />
-    <Compile Include="MessageManagement\Template\Models\TemplateMsgResult.cs" />
-    <Compile Include="MessageManagement\Template\TemplateManager.cs" />
+    <Compile Include="Message\Normal\EventHandlers\ClickEventHandler.cs" />
+    <Compile Include="Message\Normal\EventHandlers\LocationEventHandler.cs" />
+    <Compile Include="Message\Normal\EventHandlers\ScanWithSubscribeEventHandler.cs" />
+    <Compile Include="Message\Normal\EventHandlers\SubscribeEventHandler.cs" />
+    <Compile Include="Message\Normal\EventHandlers\UnsubscribeEventHandler.cs" />
+    <Compile Include="Message\Normal\EventHandlers\ViewEventHandler.cs" />
+    <Compile Include="Message\Service\ServiceMessageModels.cs" />
+    <Compile Include="Message\Service\ServiceUtil.cs" />
+    <Compile Include="Message\Template\Industry\IndustryManager.cs" />
+    <Compile Include="Message\Template\Industry\IndustryModel.cs" />
+    <Compile Include="Message\Template\Models\TemplateListResult.cs" />
+    <Compile Include="Message\Template\Models\TemplateMsgResult.cs" />
+    <Compile Include="Message\Template\TemplateManager.cs" />
     <Compile Include="User\Models\BatchSubscribeUserInfoModel.cs" />
     <Compile Include="User\Models\SubscribeUserInfoModel.cs" />
     <Compile Include="User\Models\UserListModel.cs" />
@@ -77,17 +77,17 @@
     <Compile Include="Utils\Model\ShortURLResultModel.cs" />
     <Compile Include="Utils\TokenVerifyUtil.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="MessageManagement\MessageParser.cs" />
-    <Compile Include="MessageManagement\Normal\Models\EventMessage.cs" />
-    <Compile Include="MessageManagement\Normal\Models\NormalMessage.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\ImageMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\Interface\IWxMsgHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\LinkMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\LocationMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\ShortVideoMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\TextMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\VideoMessageHandler.cs" />
-    <Compile Include="MessageManagement\Normal\MsgHandlers\VoiceMessageHandler.cs" />
+    <Compile Include="Message\MessageParser.cs" />
+    <Compile Include="Message\Normal\Models\EventMessage.cs" />
+    <Compile Include="Message\Normal\Models\NormalMessage.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\ImageMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\Interface\IWxMsgHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\LinkMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\LocationMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\ShortVideoMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\TextMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\VideoMessageHandler.cs" />
+    <Compile Include="Message\Normal\MsgHandlers\VoiceMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WxError.cs" />
   </ItemGroup>
@@ -112,6 +112,9 @@
       <Name>Log</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="JSSDK\" />
+    <Folder Include="Pay\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -42,7 +42,7 @@ namespace BIZService
             };
 
             var token = Wx.Utils.AccessTokenUtil.GetAccessToken( );
-            Wx.MessageManagement.Template.TemplateManager.Send( token, AppUtils.JsonUtil.ToJson( p ) );
+            Wx.Message.Template.TemplateManager.Send( token, AppUtils.JsonUtil.ToJson( p ) );
         }
 
 

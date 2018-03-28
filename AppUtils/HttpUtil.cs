@@ -106,6 +106,43 @@ namespace AppUtils
 
 
 
+        public string PostXml(string url, string content )
+        {
+            try
+            {
+                if ( _delayTime > 0 )
+                {
+                    Thread.Sleep( _delayTime * 1000 );
+                }
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create( new Uri( url ) );
+                req.CookieContainer = _cookie;
+
+                byte[] buff = Encoding.UTF8.GetBytes( content );
+                req.Method = "POST";
+                req.Timeout = _timeout;
+                req.ContentType = "text/xml";
+                req.ContentLength = buff.Length;
+
+                if ( null != _proxy && null != _proxy.Credentials )
+                {
+                    req.UseDefaultCredentials = true;
+                }
+                req.Proxy = _proxy;
+
+                Stream reqStream = req.GetRequestStream( );
+                reqStream.Write( buff, 0, buff.Length );
+                reqStream.Close( );
+
+                //接收返回字串
+                HttpWebResponse res = (HttpWebResponse)req.GetResponse( );
+                StreamReader sr = new StreamReader( res.GetResponseStream( ), Encoding.UTF8 );
+                return sr.ReadToEnd( );
+            }
+            catch ( Exception ex )
+            {
+                return "[Request ERROR]" + ex.Message;
+            }
+        }
 
 
     }
